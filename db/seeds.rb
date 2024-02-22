@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+vertices_params = [
+  {
+    centre_x: 100,
+    centre_y: 100,
+    height: nil,
+    width: nil,
+    radius: 50,
+    shape: 'circle'
+  },
+  {
+    centre_x: 200,
+    centre_y: 200,
+    height: nil,
+    width: nil,
+    radius: 25,
+    shape: 'circle'
+  },
+  {
+    centre_x: 300,
+    centre_y: 300,
+    height: 10,
+    width: 100,
+    radius: nil,
+    shape: 'rectangle'
+  }
+]
+
+Vertex.create(vertices_params)
