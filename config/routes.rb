@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :vertices, only: [:index]
+  resources :vertices, only: [:index, :update]
 end

@@ -1,12 +1,14 @@
 class VerticesController < ApplicationController
+  skip_forgery_protection only: [:update], if: Proc.new { Rails.env == 'development' }
+
   def index
     vertices = Vertex.all
     render json: vertices
   end
 
-  def patch
+  def update
     vertex = Vertex.find(params[:id])
-    
+
     begin
       vertex.update!(vertex_params)
     rescue => error
