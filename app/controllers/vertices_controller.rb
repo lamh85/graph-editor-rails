@@ -18,6 +18,16 @@ class VerticesController < ApplicationController
     render json: vertex.reload
   end
 
+  def destroy
+    vertex = Vertex.find(params[:id])
+
+    begin
+      vertex.destroy!
+    rescue
+      render json: { message: "Error type: #{error.class.to_s}" }
+    end
+  end
+
   private
 
     def vertex_params
